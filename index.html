@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Crusoé | Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav id="navbar">
+        <div class="logo">RC<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="https://github.com/rafaelcrusoe" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Olá, eu sou Rafael 👋</h1>
+        <p class="typing-container">Eu sou <span id="typing-text"></span><span class="cursor">|</span></p>
+        <button class="btn" onclick="scrollToProjects()">Ver Projetos</button>
+    </header>
+
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="projects">
+            <div class="card">
+                <span class="badge">Live</span>
+                <i class="fas fa-cloud-sun icon-project"></i>
+                <h3>WeatherApp</h3>
+                <p>Site para verificar temperatura, sensação térmica e vento em tempo real.</p>
+            </div>
+            <div class="card">
+                <span class="badge" style="background: rgba(168, 85, 247, 0.2); border-color: #a855f7; color: #a855f7;">MVP</span>
+                <i class="fas fa-coins icon-project"></i>
+                <h3>Convert Money</h3>
+                <p>Conversor de moedas dinâmico: Euro, Dólar, Libra e Real.</p>
+            </div>
+            <div class="card">
+                <span class="badge">Live</span>
+                <i class="fas fa-user-lock icon-project"></i>
+                <h3>Login Tech</h3>
+                <p>Tela de login futurista com background de partículas interativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Minhas Techs</h2>
+        <div class="skills-container">
+            <div class="skill-box"><i class="fab fa-html5"></i><span>HTML</span></div>
+            <div class="skill-box"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+            <div class="skill-box"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-box"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="skill-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 - Rafael Crusoé | Todos os direitos reservados
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

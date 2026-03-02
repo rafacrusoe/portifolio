@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background: #020617; /* Cor de segurança */
+}
+
+/* Camada de Partículas e Fundo */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #0c4a6e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+#navbar.scrolled {
+    background: rgba(2, 6, 23, 0.8);
+    padding: 15px 10%;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.logo { font-size: 1.6rem; font-weight: 700; }
+.logo span { color: #38bdf8; }
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: #94a3b8; transition: 0.3s; }
+.nav-links a:hover { color: #38bdf8; }
+
+/* Header e Efeito Typewriter */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #38bdf8, #818cf8);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+}
+
+.typing-container {
+    font-size: 1.5rem;
+    color: #94a3b8;
+    margin-top: 10px;
+    min-height: 1.6em;
+}
+
+#typing-text { color: #38bdf8; font-weight: 600; }
+.cursor { color: #38bdf8; animation: blink 0.8s infinite; }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Botão */
+.btn {
+    margin-top: 35px;
+    padding: 16px 40px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: #020617;
+    font-weight: 700;
+    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(56, 189, 248, 0.6); }
+
+/* Seções e Cards */
+section { padding: 120px 10%; }
+h2 { text-align: center; margin-bottom: 60px; font-size: 2.8rem; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.08);
+    /* Cria um brilho azul que parece vir de dentro do card */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+}
+
+.icon-project { font-size: 3rem; color: #38bdf8; margin-bottom: 20px; display: inline-block; }
+
+/* Skills - Base */
+.skills-container { 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+}
+
+.skill-box {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 25px; 
+    border-radius: 20px;
+    width: 120px; 
+    transition: 0.4s; 
+    opacity: 0; 
+    transform: translateY(30px);
+    position: relative; /* Garante que o alinhamento interno funcione */
+}
+
+/* Cor padrão dos ícones (antes do hover) */
+.skill-box i { 
+    font-size: 2.8rem; 
+    color: #64748b; 
+    transition: 0.4s;
+    margin-bottom: 10px;
+}
+
+.skill-box span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+/* Efeito de Hover no Box */
+.skill-box:hover { 
+    transform: translateY(-10px); 
+    border: 1px solid #38bdf8; 
+    background: rgba(56, 189, 248, 0.1);
+}
+
+/* --- CORES INDIVIDUAIS DOS ÍCONES NO HOVER --- */
+
+.skill-box:hover .fa-html5 { 
+    color: #e34f26 !important; 
+    filter: drop-shadow(0 0 10px #e34f26);
+}
+
+.skill-box:hover .fa-css3-alt { 
+    color: #1572b6 !important; 
+    filter: drop-shadow(0 0 10px #1572b6);
+}
+
+.skill-box:hover .fa-js { 
+    color: #f7df1e !important; 
+    filter: drop-shadow(0 0 10px #f7df1e);
+}
+
+.skill-box:hover .fa-react { 
+    color: #61dafb !important; 
+    filter: drop-shadow(0 0 10px #61dafb);
+}
+
+.skill-box:hover .fa-node-js { 
+    color: #339933 !important; 
+    filter: drop-shadow(0 0 10px #339933);
+}
+
+/* Ajuste de cor do texto no hover */
+.skill-box:hover span {
+    color: #fff;
+}
+
+footer { text-align: center; padding: 60px; background: #020617; color: #475569; }
+
+@keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+.badge {
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #38bdf8;
+    z-index: 10;
+}
