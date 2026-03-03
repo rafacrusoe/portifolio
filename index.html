@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="particles-js"></div>
 
@@ -17,7 +19,8 @@
             <li><a href="#">Home</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#skills">Habilidades</a></li>
-            <li><a href="https://github.com/rafaelcrusoe" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="https://github.com/rafacrusoe" target="_blank"><i class="fab fa-github"></i></a></li>
         </ul>
     </nav>
 
@@ -37,7 +40,8 @@
                 <p>Site para verificar temperatura, sensação térmica e vento em tempo real.</p>
             </div>
             <div class="card">
-                <span class="badge" style="background: rgba(168, 85, 247, 0.2); border-color: #a855f7; color: #a855f7;">MVP</span>
+                <span class="badge"
+                    style="background: rgba(168, 85, 247, 0.2); border-color: #a855f7; color: #a855f7;">MVP</span>
                 <i class="fas fa-coins icon-project"></i>
                 <h3>Convert Money</h3>
                 <p>Conversor de moedas dinâmico: Euro, Dólar, Libra e Real.</p>
@@ -53,20 +57,78 @@
 
     <section id="skills">
         <h2>Minhas Techs</h2>
-        <div class="skills-container">
-            <div class="skill-box"><i class="fab fa-html5"></i><span>HTML</span></div>
-            <div class="skill-box"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-            <div class="skill-box"><i class="fab fa-js"></i><span>JavaScript</span></div>
-            <div class="skill-box"><i class="fab fa-react"></i><span>React</span></div>
-            <div class="skill-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+
+        <div class="skills-wrapper">
+            <div class="skill-category">
+                <h3>Front-End</h3>
+                <div class="skills-container">
+                    <div class="skill-box"><i class="fab fa-html5"></i><span>HTML</span></div>
+                    <div class="skill-box"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                    <div class="skill-box"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill-box"><i class="fab fa-react"></i><span>React</span></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Back-End & Database</h3>
+                <div class="skills-container">
+                    <div class="skill-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                    <div class="skill-box"><i class="fas fa-server"></i><span>Express</span></div>
+                    <div class="skill-box"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                    <div class="skill-box"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                </div>
+            </div>
         </div>
     </section>
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Seu Nome" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+            </form>
 
+            <div class="contact-info">
+                <p>Bora trocar uma ideia? Me chama nas redes!</p>
+                <div class="social-links">
+                    <a href="https://github.com/rafacrusoe" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/rafaelcrusoe" target="_blank"><i class="fab fa-linkedin"></i>
+                        LinkedIn</a>
+                    <a href="https://wa.me/71999031409" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cta-final">
+        <div class="cta-content">
+            <h2>Bora construir algo incrível? 🚀</h2>
+            <p>Estou sempre aberto a novos desafios e projetos inovadores. Se você busca um desenvolvedor focado em
+                resultados e experiência do usuário, vamos conversar!</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/71999031409" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                <a href="mailto:rafael.crusoe@aln.senaicimatec.edu.br?subject=Contato via Portfólio"
+                    class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Mandar E-mail
+                </a>
+            </div>
+        </div>
+    </section>
     <footer>
         © 2026 - Rafael Crusoé | Todos os direitos reservados
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="script.js"></script>
 </body>
+
 </html>

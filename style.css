@@ -1,3 +1,6 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS E RESET
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +8,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    color: white;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    background: #020617; /* Cor de segurança */
+html {
+    scroll-behavior: smooth; 
 }
 
-/* Camada de Partículas e Fundo */
+body {
+    color: white;
+    overflow-x: hidden;
+    background: #020617;
+}
+
+/* Fundo Animado com Partículas */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -25,7 +31,12 @@ body {
     animation: gradientBG 15s ease infinite;
 }
 
-/* Navbar */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 #navbar {
     position: fixed;
     top: 0;
@@ -47,11 +58,22 @@ body {
 
 .logo { font-size: 1.6rem; font-weight: 700; }
 .logo span { color: #38bdf8; }
-.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
-.nav-links a { text-decoration: none; color: #94a3b8; transition: 0.3s; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: 0.3s;
+}
+
 .nav-links a:hover { color: #38bdf8; }
 
-/* Header e Efeito Typewriter */
 header {
     height: 100vh;
     display: flex;
@@ -80,9 +102,27 @@ header h1 {
 #typing-text { color: #38bdf8; font-weight: 600; }
 .cursor { color: #38bdf8; animation: blink 0.8s infinite; }
 
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
-/* Botão */
+
+section {
+    padding: 160px 10%;
+    min-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 .btn {
     margin-top: 35px;
     padding: 16px 40px;
@@ -96,13 +136,19 @@ header h1 {
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
-.btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(56, 189, 248, 0.6); }
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.6);
+}
 
-/* Seções e Cards */
-section { padding: 120px 10%; }
-h2 { text-align: center; margin-bottom: 60px; font-size: 2.8rem; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+/* =========================================
+   CARDS DE PROJETOS
+   ========================================= */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
 
 .card {
     background: rgba(255, 255, 255, 0.03);
@@ -113,99 +159,25 @@ h2 { text-align: center; margin-bottom: 60px; font-size: 2.8rem; text-shadow: 0 
     transition: 0.5s;
     opacity: 0;
     transform: translateY(50px);
+    position: relative;
 }
 
 .card:hover {
     transform: translateY(-15px);
     background: rgba(255, 255, 255, 0.08);
-    /* Cria um brilho azul que parece vir de dentro do card */
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1);
     border-color: #38bdf8;
 }
 
-.icon-project { font-size: 3rem; color: #38bdf8; margin-bottom: 20px; display: inline-block; }
-
-/* Skills - Base */
-.skills-container { 
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 25px; 
+.icon-project {
+    font-size: 3rem;
+    color: #38bdf8;
+    margin-bottom: 20px;
+    display: inline-block;
 }
-
-.skill-box {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    background: rgba(255, 255, 255, 0.03); 
-    padding: 25px; 
-    border-radius: 20px;
-    width: 120px; 
-    transition: 0.4s; 
-    opacity: 0; 
-    transform: translateY(30px);
-    position: relative; /* Garante que o alinhamento interno funcione */
-}
-
-/* Cor padrão dos ícones (antes do hover) */
-.skill-box i { 
-    font-size: 2.8rem; 
-    color: #64748b; 
-    transition: 0.4s;
-    margin-bottom: 10px;
-}
-
-.skill-box span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #cbd5e1;
-}
-
-/* Efeito de Hover no Box */
-.skill-box:hover { 
-    transform: translateY(-10px); 
-    border: 1px solid #38bdf8; 
-    background: rgba(56, 189, 248, 0.1);
-}
-
-/* --- CORES INDIVIDUAIS DOS ÍCONES NO HOVER --- */
-
-.skill-box:hover .fa-html5 { 
-    color: #e34f26 !important; 
-    filter: drop-shadow(0 0 10px #e34f26);
-}
-
-.skill-box:hover .fa-css3-alt { 
-    color: #1572b6 !important; 
-    filter: drop-shadow(0 0 10px #1572b6);
-}
-
-.skill-box:hover .fa-js { 
-    color: #f7df1e !important; 
-    filter: drop-shadow(0 0 10px #f7df1e);
-}
-
-.skill-box:hover .fa-react { 
-    color: #61dafb !important; 
-    filter: drop-shadow(0 0 10px #61dafb);
-}
-
-.skill-box:hover .fa-node-js { 
-    color: #339933 !important; 
-    filter: drop-shadow(0 0 10px #339933);
-}
-
-/* Ajuste de cor do texto no hover */
-.skill-box:hover span {
-    color: #fff;
-}
-
-footer { text-align: center; padding: 60px; background: #020617; color: #475569; }
-
-@keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
 .badge {
-    position: absolute; 
+    position: absolute;
     top: 15px;
     right: 15px;
     background: rgba(56, 189, 248, 0.2);
@@ -217,4 +189,221 @@ footer { text-align: center; padding: 60px; background: #020617; color: #475569;
     text-transform: uppercase;
     border: 1px solid #38bdf8;
     z-index: 10;
+}
+
+/* =========================================
+   SEÇÃO DE HABILIDADES (CATEGORIZADAS)
+   ========================================= */
+.skills-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.skill-category h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px;
+    border-radius: 20px;
+    width: 120px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+    border: 1px solid transparent;
+}
+
+.skill-box i {
+    font-size: 2.8rem;
+    color: #64748b;
+    transition: 0.4s;
+    margin-bottom: 10px;
+}
+
+.skill-box span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    border: 1px solid #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.skill-box:hover span { color: #fff; }
+
+/* Cores Neon Individuais */
+.skill-box:hover .fa-html5 { color: #e34f26 !important; filter: drop-shadow(0 0 10px #e34f26); }
+.skill-box:hover .fa-css3-alt { color: #1572b6 !important; filter: drop-shadow(0 0 10px #1572b6); }
+.skill-box:hover .fa-js { color: #f7df1e !important; filter: drop-shadow(0 0 10px #f7df1e); }
+.skill-box:hover .fa-react { color: #61dafb !important; filter: drop-shadow(0 0 10px #61dafb); }
+.skill-box:hover .fa-node-js { color: #339933 !important; filter: drop-shadow(0 0 10px #339933); }
+.skill-box:hover .fa-server { color: #ffffff !important; filter: drop-shadow(0 0 10px #ffffff); } /* Express */
+.skill-box:hover .fa-database { color: #47A248 !important; filter: drop-shadow(0 0 10px #47A248); } /* MongoDB */
+.skill-box:hover .fa-git-alt { color: #F05032 !important; filter: drop-shadow(0 0 10px #F05032); } /* Git */
+
+/* =========================================
+   CONTATO
+   ========================================= */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #38bdf8;
+    transform: translateX(10px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 60px;
+    background: #020617;
+    color: #475569;
+}
+
+#cta-final {
+    padding: 100px 10%;
+    text-align: center;
+    min-height: auto; /* Esta seção não precisa ocupar a tela toda */
+}
+
+.cta-content {
+    background: rgba(56, 189, 248, 0.05);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    backdrop-filter: blur(10px);
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-content p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Botão específico para o WhatsApp */
+.btn-whatsapp {
+    background: #25d366 !important;
+    color: #fff !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-whatsapp:hover {
+    background: #128c7e !important;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4) !important;
+}
+
+/* Botão de contorno (E-mail) */
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid #38bdf8 !important;
+    color: #38bdf8 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-outline:hover {
+    background: #38bdf8 !important;
+    color: #fff !important;
 }

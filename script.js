@@ -3,7 +3,7 @@ const textElement = document.getElementById("typing-text");
 const phrases = [
     "Desenvolvedor FullStack", 
     "Estudante de Computação", 
-    "Futuro do Brasil"
+    "o Futuro do Brasil"
 ];
 
 let phraseIndex = 0;
@@ -48,7 +48,7 @@ window.addEventListener("scroll", function() {
 });
 
 // 4. Intersection Observer para animações de entrada (Cards e Skills)
-const elements = document.querySelectorAll('.card, .skill-box');
+const elements = document.querySelectorAll('.card, .skill-box, .contact-container');
 const observer = new IntersectionObserver(entries => {
     entries.forEach((entry, index) => {
         if(entry.isIntersecting) {
@@ -66,6 +66,9 @@ elements.forEach(el => observer.observe(el));
 window.onload = function() {
     // Inicia o efeito de escrita
     typeEffect();
+
+    
+
 
     // Inicia as partículas
     particlesJS("particles-js", {
