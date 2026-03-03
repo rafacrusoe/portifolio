@@ -27,8 +27,8 @@ body {
     left: 0;
     z-index: -1;
     background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #0c4a6e);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-size: 200% 200%;
+    animation: gradientBG 20s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -129,7 +129,7 @@ h2 {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: #fff;
+    background: #c3e4f5;
     color: #020617;
     font-weight: 700;
     transition: 0.4s;
@@ -406,4 +406,32 @@ footer {
 .btn-outline:hover {
     background: #38bdf8 !important;
     color: #fff !important;
+}
+
+.btn-live {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    transition: 0.4s all ease;
+}
+
+.btn-live:hover {
+    background: #38bdf8;
+    color: #020617;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-live i {
+    font-size: 0.8rem;
 }

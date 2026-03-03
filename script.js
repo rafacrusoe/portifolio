@@ -73,7 +73,7 @@ window.onload = function() {
     // Inicia as partículas
     particlesJS("particles-js", {
         "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
             "color": { "value": "#38bdf8" },
             "shape": { "type": "circle" },
             "opacity": { "value": 0.5 },
@@ -87,7 +87,7 @@ window.onload = function() {
             },
             "move": {
                 "enable": true,
-                "speed": 2,
+                "speed": 1.5,
                 "direction": "none",
                 "out_mode": "out"
             }
@@ -95,7 +95,7 @@ window.onload = function() {
         "interactivity": {
             "detect_on": "canvas",
             "events": {
-                "onhover": { "enable": true, "mode": "grab" },
+                "onhover": { "enable": false},
                 "onclick": { "enable": true, "mode": "push" },
                 "resize": true
             }
