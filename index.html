@@ -16,11 +16,16 @@
 
     <nav id="navbar">
         <div class="logo">RSC<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#contato">Contato</a></li>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#projetos" onclick="toggleMenu()">Projetos</a></li>
+            <li><a href="#skills" onclick="toggleMenu()">Habilidades</a></li>
+            <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
             <li><a href="https://github.com/rafacrusoe" target="_blank"><i class="fab fa-github"></i></a></li>
         </ul>
     </nav>

@@ -67,8 +67,6 @@ window.onload = function() {
     // Inicia o efeito de escrita
     typeEffect();
 
-    
-
 
     // Inicia as partículas
     particlesJS("particles-js", {
@@ -103,3 +101,8 @@ window.onload = function() {
         "retina_detect": true
     });
 };
+
+function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+} 
