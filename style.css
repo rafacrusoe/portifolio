@@ -268,30 +268,95 @@ h2 {
     border: 1px solid transparent;
 }
 
-.skill-box i { font-size: 2.8rem; color: #64748b; margin-bottom: 10px; }
-.skill-box:hover { border: 1px solid #38bdf8; background: rgba(56, 189, 248, 0.1); transform: translateY(-10px); }
-.skill-box:hover i { color: #38bdf8; }
+.skill-box i { 
+    font-size: 2.8rem; 
+    color: #64748b; 
+    margin-bottom: 10px; 
+    transition: 0.4s; /* Para a cor mudar suavemente */
+}
+
+.skill-box:hover { 
+    border: 1px solid #38bdf8; 
+    background: rgba(56, 189, 248, 0.1); 
+    transform: translateY(-10px); 
+}
+
+/* Cores Neon Específicas no Hover */
+.skill-box:hover .fa-html5 { color: #e34f26; filter: drop-shadow(0 0 10px #e34f26); }
+.skill-box:hover .fa-css3-alt { color: #1572b6; filter: drop-shadow(0 0 10px #1572b6); }
+.skill-box:hover .fa-js { color: #f7df1e; filter: drop-shadow(0 0 10px #f7df1e); }
+.skill-box:hover .fa-react { color: #61dafb; filter: drop-shadow(0 0 10px #61dafb); }
+.skill-box:hover .fa-node-js { color: #339933; filter: drop-shadow(0 0 10px #339933); }
+.skill-box:hover .fa-server { color: #ffffff; filter: drop-shadow(0 0 10px #ffffff); } /* Express */
+.skill-box:hover .fa-database { color: #47A248; filter: drop-shadow(0 0 10px #47A248); } /* MongoDB */
+.skill-box:hover .fa-git-alt { color: #F05032; filter: drop-shadow(0 0 10px #F05032); } /* Git */
+
+.skill-box:hover span {
+    color: #fff;
+}
 
 /* =========================================
    CONTATO & CTA
    ========================================= */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+    grid-template-columns: 1.2fr 0.8fr; /* Dá mais espaço para o formulário */
+    gap: 60px;
     background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
+    padding: 60px; /* Aumentado de 40px para 60px */
     border-radius: 24px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1100px; /* Evita que fique largo demais em monitores gigantes */
+    margin: 0 auto;
 }
 
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mais espaço entre os campos */
+}
 
-.input-group input, .input-group textarea {
-    width: 100%; padding: 15px; background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
-    color: white; outline: none; transition: 0.3s;
+.contact-form .btn {
+    padding: 18px;
+    font-size: 1.1rem;
+    width: 100%; /* No mobile e desktop preenche a coluna dele */
+}
+
+.contact-info p {
+    font-size: 1.2rem; /* Aumentado o texto de chamada */
+    margin-bottom: 20px;
+    color: #cbd5e1;
+}
+
+.social-links a {
+    font-size: 1.2rem; /* Ícones e links maiores */
+    gap: 15px;
+}
+
+/* Ajuste específico para Celular */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    
+    .contact-info p {
+        font-size: 1.1rem;
+    }
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 18px; /* Aumentado para dar mais "corpo" ao campo */
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem; /* Aumentado para melhor leitura */
+    transition: 0.3s;
+    outline: none;
 }
 
 .input-group input:focus, .input-group textarea:focus {
