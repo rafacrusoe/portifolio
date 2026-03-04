@@ -106,3 +106,26 @@ function toggleMenu() {
     const nav = document.getElementById("nav-links");
     nav.classList.toggle("active");
 } 
+
+window.addEventListener("scroll", () => {
+    const scrollSection = document.querySelector(".horizontal-scroll-wrapper");
+    const track = document.querySelector(".projects-track");
+    
+    if (scrollSection && track) {
+        const bounding = scrollSection.getBoundingClientRect();
+        const sectionHeight = scrollSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        // Verifica se a seção está visível na tela
+        if (bounding.top <= 0 && bounding.bottom >= windowHeight) {
+            // Calcula quanto do scroll já passou dentro da seção (0 a 1)
+            const progress = -bounding.top / (sectionHeight - windowHeight);
+            
+            // Calcula a distância máxima que o track pode percorrer
+            const maxMove = track.offsetWidth - window.innerWidth + (window.innerWidth * 0.2);
+            
+            // Aplica a transformação
+            track.style.transform = `translateX(-${progress * maxMove}px)`;
+        }
+    }
+});
